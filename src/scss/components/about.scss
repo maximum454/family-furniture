@@ -1,0 +1,85 @@
+// ==========================================
+// 7. ABOUT (О НАС)
+// ==========================================
+
+.about {
+  padding: 30px 0;
+  background-color: var(--color-bg-light);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-accent);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  &__features {
+    margin-bottom: 32px;
+  }
+
+  &__feature {
+    position: relative;
+    padding-left: 24px;
+    font-size: 0.9375rem;
+    color: var(--color-text-main);
+    font-family: var(--font-accent);
+    margin-bottom: 10px;
+
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--color-accent-gold);
+      font-weight: bold;
+    }
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    width: 150px;
+    height: 150px;
+  }
+}

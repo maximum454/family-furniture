@@ -1,0 +1,66 @@
+// ==========================================
+// 4. HERO SECTION
+// ==========================================
+
+.hero {
+  background-color: var(--color-bg-light);
+  padding: 60px 0 80px;
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-accent);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    margin-bottom: 12px;
+  }
+
+  &__title {
+    font-family: var(--font-accent);
+    font-size: 3.25rem; // 52px
+    font-weight: 500;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-text-main);
+    margin-bottom: 24px;
+
+    @media (max-width: 768px) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__description {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    max-width: 440px;
+    margin-bottom: 36px;
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    border-radius: 2px;
+    object-fit: cover;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+  }
+}

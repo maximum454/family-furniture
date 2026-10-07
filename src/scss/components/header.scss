@@ -1,0 +1,51 @@
+// ==========================================
+// 3. HEADER
+// ==========================================
+
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__phone {
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-text-main);
+
+    &:hover {
+      color: var(--color-accent-gold);
+    }
+  }
+}
+
+.nav {
+  @media (max-width: 768px) {
+    display: none; // Для мобильных можно доработать бургер
+  }
+
+  &__list {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__link {
+    font-family: var(--font-accent);
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+
+    &:hover {
+      color: var(--color-text-main);
+    }
+  }
+}
