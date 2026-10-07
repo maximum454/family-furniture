@@ -1,0 +1,27 @@
+{
+  "name": "family-furniture",
+  "version": "1.0.0",
+  "description": "FF",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximum454/family-furniture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/maximum454/family-furniture/issues"
+  },
+  "homepage": "https://github.com/maximum454/family-furniture#readme",
+  "devDependencies": {
+    "sass": "^1.105.1",
+    "vite": "^8.3.3"
+  }
+}
