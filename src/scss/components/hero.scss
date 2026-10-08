@@ -3,64 +3,135 @@
 // ==========================================
 
 .hero {
-  background-color: var(--color-bg-light);
-  padding: 60px 0 80px;
+  position: relative;
+  width: 100%;
+  min-height: 540px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 
-  &__container {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    align-items: center;
-    gap: 40px;
+  // Правая часть — фоновое изображение на всю высоту и ширину справа
+  &__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%; // Изображение занимает правую половину/часть блока
+    height: 100%;
+    z-index: 1;
 
     @media (max-width: 992px) {
-      grid-template-columns: 1fr;
+      width: 100%;
+      opacity: 0.98; // На мобильных можно делать легким фоном
     }
-  }
-
-  &__subtitle {
-    font-family: var(--font-accent);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-text-light);
-    margin-bottom: 12px;
-  }
-
-  &__title {
-    font-family: var(--font-accent);
-    font-size: 3.25rem; // 52px
-    font-weight: 500;
-    line-height: 1.15;
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: var(--color-text-main);
-    margin-bottom: 24px;
-
-    @media (max-width: 768px) {
-      font-size: 2.25rem;
-    }
-  }
-
-  &__description {
-    font-size: 1.0625rem;
-    color: var(--color-text-muted);
-    max-width: 440px;
-    margin-bottom: 36px;
-  }
-
-  &__media {
-    position: relative;
   }
 
   &__image {
     width: 100%;
-    border-radius: 2px;
+    height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 
+  // Градиентная подложка слева направо (создает мягкий переход текста в картинку)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; // Перекрывает левую часть с текстом и создает плавный уход в картинку
+    height: 100%;
+    // Угол ~105deg дает направление из верхнего левого угла в нижний правый
+    background: linear-gradient(
+                    105deg,
+                    #F9F8F8 0%,
+                    #F9F8F8 48%,
+                    rgba(249, 248, 248, 0) 75%
+    );
+    z-index: 2;
+    pointer-events: none;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      background: linear-gradient(
+                      180deg,
+                      #F9F8F8 0%,
+                      #F9F8F8 20%,
+                      rgba(249, 248, 248, 0) 98%
+      );
+    }
+  }
+
+  // Контейнер с текстом поверх фона и градиента
+  &__container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  &__content {
+    max-width: 520px; // Ограничиваем ширину текстового блока слева
+  }
+
+  &__subtitle {
+    font-family: var(--font-main);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-family: var(--font-accent);
+    font-size: 3rem; // 48px
+    font-weight: 400;
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: var(--color-text-main);
+    margin-bottom: 24px;
+
+    b {
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: 36px;
+    position: relative;
+    padding-top: 16px;
+
+    // Тонкая декоративная полоса над описанием, как на макете
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 40px;
+      height: 1px;
+      background-color: var(--color-border);
+    }
+  }
+
+  // Круглая печать/значок в правом нижнем углу картинки
   &__badge {
     position: absolute;
-    bottom: -20px;
-    right: 20px;
+    bottom: 30px;
+    right: 80px;
+    z-index: 4;
+
+    @media (max-width: 992px) {
+      right: 20px;
+      bottom: 20px;
+    }
   }
 }

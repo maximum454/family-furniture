@@ -5,7 +5,7 @@
 .footer {
   background-color: var(--color-bg-footer);
   color: #C1C5BD;
-  padding: 80px 0 0;
+  padding: 40px 0 0;
 
   &__main {
     display: grid;
@@ -101,6 +101,20 @@
   &__legal-link {
     &:hover {
       color: var(--color-white);
+    }
+  }
+  &__address{
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    &:hover {
+      color: var(--color-primary-hover);
+    }
+  }
+  &__worktime{
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    &:hover {
+      color: var(--color-primary-hover);
     }
   }
 }
